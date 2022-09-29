@@ -26,6 +26,11 @@ Shader "TrellShaders/MyLit"
 			#pragma fragment Fragment
 
 			#define _SPECULAR_COLOR
+			//prag for off or on MainLigth shadows
+
+			//in c# materia.EnabableKeyword(_MAIN_LIGTH_SHADOWS) materia.DisableKeyword(_MAIN_LIGTH_SHADOWS) 
+			#pragma multi_compile _ _MAIN_LIGHT_SHADOWS 
+
 			#include "MyLitFowradLitPass.hlsl"
 
 

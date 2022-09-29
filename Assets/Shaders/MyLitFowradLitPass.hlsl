@@ -54,7 +54,7 @@ float4 Fragment(Intrepolators input) : SV_TARGET
 	ligthingInput.normalWS = input.normalWS;
 	ligthingInput.positionWS = input.positionWS;
 	ligthingInput.viewDirectionWS = GetWorldSpaceNormalizeViewDir(input.positionWS);
-
+	ligthingInput.shadowCoord = TransformWorldToShadowCoord(input.positionWS);
 	// surface materials fhysical properties like color 
 	SurfaceData surfaceInput = (SurfaceData)0;
 
