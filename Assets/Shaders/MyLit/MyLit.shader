@@ -52,13 +52,15 @@ Shader "TrellShaders/MyLit"
 
 			Tags{ "LightMode" = "ShadowCaster"}
 
+			ColorMask 0
+
 			HLSLPROGRAM
 			
 			#pragma vertex Vertex
 			#pragma fragment Fragment
 
 			//Because we dont need render color in shadow caster
-			ColorMask 0;
+
 
 			#include "MyLitShadowCasterPass.hlsl"
 			
