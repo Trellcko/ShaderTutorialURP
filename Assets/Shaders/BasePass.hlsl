@@ -10,6 +10,8 @@ struct Output
     half4 positionCS : SV_POSITION;            
 };
 
+half4 _BaseColor;
+
 Output vertex(Input input)
 {
 	Output o = (Output)0;
@@ -25,5 +27,5 @@ Output vertex(Input input)
 
 half4 fragment(Output o) : SV_TARGET
 {
-	return half4(1, 0.6, 1, 1);
+	return half4(_BaseColor);
 }
