@@ -5,9 +5,14 @@ Shader "Unlit/Blending"
         _MainTex ("Texture", 2D) = "white" {}
         _BaseColor ("Color", Color) = (1,1,1,1) 
 
+        //SrcBLend Actually
+
         [Enum(UnityEngine.Rendering.BlendMode)]
         _SrcFactor ("SrcFactor", float) = 0
         
+        
+        //DstBlend Actually
+
         [Enum(UnityEngine.Rendering.BlendMode)]
         _DstFactor ("DstFactor", float) = 0
     }
