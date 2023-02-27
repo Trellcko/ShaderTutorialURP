@@ -1,23 +1,25 @@
-Shader "Unlit/BaseShader"
+Shader "Unlit/RotateDegrees"
 {
-    Properties
+     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        
+        _Rotate ("Rotate", float) = 0
         _BaseColor ("Color", Color) = (1,1,1,1) 
     }
     SubShader
     {
         Tags { "RenderType"="Transparent" "Queue"="Transparent" }
 
+        ZWrite Off
+        Blend SrcAlpha OneMinusSrcAlpha
+
         Pass
         {
-            Blend SrcAlpha OneMinusSrcAlpha
             HLSLPROGRAM
             #pragma vertex vertex;
             #pragma fragment fragment;
 
-            #include "Assets\Shaders\BasePass.hlsl"
+            #include "Assets\Shaders\RotateDegrees\Rotate.hlsl"
             ENDHLSL
         }
     }
